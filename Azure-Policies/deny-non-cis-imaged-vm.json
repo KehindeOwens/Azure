@@ -1,0 +1,26 @@
+{
+  "mode": "All",
+  "policyRule": {
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "in": [
+            "Microsoft.Compute/virtualMachines",
+            "Microsoft.Compute/virtualMachineScaleSets"
+          ]
+        },
+        {
+          "not": {
+            "field": "Microsoft.Compute/imagePublisher",
+            "equals": "center-for-internet-security-inc"
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  },
+  "parameters": {}
+}
