@@ -1,0 +1,32 @@
+{
+    "properties": {
+        "roleName": "CT-CR-PreventPolicyModification",
+        "description": "This Custom Role will prevent any changes/actions (creation, deletion, etc) to Azure Policies & Custom Roles. (Role allows read access to Azure Policies & Custom Roles).",
+        "assignableScopes": [
+            "/subscriptions/6ad3f45a-7b30-4c06-9c3d-fd2b28fea7fc"
+        ],
+        "permissions": [
+            {
+                "actions": [
+                    "Microsoft.Authorization/roleDefinitions/read",
+                    "Microsoft.Authorization/roleAssignments/read",
+                    "Microsoft.Authorization/policySetDefinitions/read",
+                    "Microsoft.Authorization/policyDefinitions/read",
+                    "Microsoft.Authorization/policyAssignments/read",
+                    "Microsoft.Authorization/permissions/read",
+                    "Microsoft.Authorization/denyAssignments/read"
+                ],
+                "notActions": [
+                    "Microsoft.Authorization/policyassignments/*",
+                    "Microsoft.Authorization/policydefinitions/*",
+                    "Microsoft.Authorization/policysetdefinitions/*",
+                    "Microsoft.Authorization/roleAssignments/*",
+                    "Microsoft.Authorization/roleDefinitions/*",
+                    "Microsoft.PolicyInsights/*"
+                ],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+    }
+}
